@@ -28,12 +28,28 @@ body.library {
 
 /* Content boxes */
 .welcome-content, .library-content {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9); /* default semi-transparent white */
   padding: 2rem;
   border-radius: 8px;
   width: 80%;
   max-width: 800px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Special styling for welcome page content */
+.welcome-content {
+  background: rgba(0, 0, 0, 0.6); /* dark semi-transparent background */
+  text-align: center;
+}
+.welcome-content h1 {
+  color: #ffcc00; /* golden yellow for title */
+}
+.welcome-content p {
+  color: #00ffcc; /* teal for paragraph */
+}
+.welcome-content a.btn {
+  color: #fff;
+  background-color: #0077cc; /* blue button */
 }
 
 /* Buttons */
