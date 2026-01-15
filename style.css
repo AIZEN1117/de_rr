@@ -53,13 +53,14 @@ body.library {
 
 /* Special styling for library page content */
 .library-content {
-  background: rgba(255, 255, 255, 0.85); /* light semi-transparent background */
+  background: rgba(255, 255, 255, 0.9); /* light semi-transparent background */
 }
 .library-content h2 {
   color: #2c3e50; /* dark navy for heading */
 }
 .library-content .stats {
   color: #16a085; /* teal for stats text */
+  font-weight: bold;
 }
 .library-content .controls input,
 .library-content .controls select {
@@ -69,6 +70,10 @@ body.library {
 .library-content .controls button {
   background-color: #2980b9; /* blue buttons */
   color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .library-content .controls button:hover {
   background-color: #3498db;
@@ -107,6 +112,11 @@ body.library {
   padding: 1rem;
   margin: 0.5rem 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .book-card h3 {
   margin: 0 0 0.5rem;
@@ -114,7 +124,145 @@ body.library {
 }
 .book-card .meta {
   font-size: 0.9rem;
-  color: #666;
+  color: #666; /* muted gray for details */
+}
+.book-card .status.available {
+  color: green;
+  font-weight: bold;
+}
+.book-card .status.borrowed {
+  color: red;
+  font-weight: bold;
+}
+.book-card .actions button {
+  margin-right: 0.5rem;
+}/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Page One (index.html) */
+body.welcome {
+  background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Page Two (library.html) */
+body.library {
+  background: url("https://images.unsplash.com/photo-1512820790803-83ca734da794") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Overlay keeps content centered */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Content boxes */
+.welcome-content, .library-content {
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Special styling for welcome page content */
+.welcome-content {
+  background: rgba(0, 0, 0, 0.6); /* dark semi-transparent background */
+  text-align: center;
+}
+.welcome-content h1 {
+  color: #ffcc00; /* golden yellow for title */
+}
+.welcome-content p {
+  color: #00ffcc; /* teal for paragraph */
+}
+.welcome-content a.btn {
+  color: #fff;
+  background-color: #0077cc; /* blue button */
+}
+
+/* Special styling for library page content */
+.library-content {
+  background: rgba(255, 255, 255, 0.9); /* light semi-transparent background */
+}
+.library-content h2 {
+  color: #2c3e50; /* dark navy for heading */
+}
+.library-content .stats {
+  color: #16a085; /* teal for stats text */
+  font-weight: bold;
+}
+.library-content .controls input,
+.library-content .controls select {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+.library-content .controls button {
+  background-color: #2980b9; /* blue buttons */
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.library-content .controls button:hover {
+  background-color: #3498db;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #555;
+}
+.btn.small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Stats */
+.stats {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Book cards */
+.book-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.book-card h3 {
+  margin: 0 0 0.5rem;
+  color: #34495e; /* dark gray-blue for titles */
+}
+.book-card .meta {
+  font-size: 0.9rem;
+  color: #666; /* muted gray for details */
 }
 .book-card .status.available {
   color: green;
