@@ -1,0 +1,52 @@
+[
+  {
+    "id": 301,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "year": 2008,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 302,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt, David Thomas",
+    "isbn": "9780201616224",
+    "year": 1999,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 303,
+    "title": "Effective Java",
+    "author": "Joshua Bloch",
+    "isbn": "9780134685991",
+    "year": 2018,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 304,
+    "title": "Head First Design Patterns",
+    "author": "Eric Freeman, Elisabeth Robson",
+    "isbn": "9780596007126",
+    "year": 2004,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 305,
+    "title": "You Don't Know JS Yet",
+    "author": "Kyle Simpson",
+    "isbn": "9781091210099",
+    "year": 2020,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  }
+]
