@@ -1,7 +1,8 @@
+// ===== CONFIG =====
 const STORAGE_KEY = "library_books_v7";
 let books = [];
 
-// Load books from JSON, then sync with localStorage
+// ===== LOAD & SAVE =====
 async function loadBooks() {
   try {
     const response = await fetch("books.json"); // fetch JSON file
@@ -20,14 +21,18 @@ async function loadBooks() {
   }
 
   renderBooks();
+  updateDashboard(); // also update dashboard if present
 }
 
 function saveBooks() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(books));
 }
 
+// ===== RENDER LIBRARY =====
 function renderBooks() {
   const table = document.getElementById("bookTable");
+  if (!table) return; // skip if not on library page
+
   const search = document.getElementById("searchInput")?.value.toLowerCase() || "";
   const filter = document.getElementById("filterSelect")?.value || "all";
 
@@ -62,15 +67,35 @@ function renderBooks() {
   updateStats();
 }
 
+// ===== UPDATE STATS =====
 function updateStats() {
   const total = books.length;
   const available = books.filter(b => b.available).length;
   const borrowed = total - available;
-  document.getElementById("totalCount").textContent = `Total: ${total}`;
-  document.getElementById("availableCount").textContent = `Available: ${available}`;
-  document.getElementById("borrowedCount").textContent = `Borrowed: ${borrowed}`;
+
+  // Library page stats
+  document.getElementById("totalCount")?.textContent = `Total: ${total}`;
+  document.getElementById("availableCount")?.textContent = `Available: ${available}`;
+  document.getElementById("borrowedCount")?.textContent = `Borrowed: ${borrowed}`;
+
+  // Dashboard page stats
+  updateDashboard();
 }
 
+// ===== DASHBOARD =====
+function updateDashboard() {
+  if (document.body.classList.contains("dashboard")) {
+    const total = books.length;
+    const available = books.filter(b => b.available).length;
+    const borrowed = total - available;
+
+    document.getElementById("dashTotal")?.textContent = total;
+    document.getElementById("dashAvailable")?.textContent = available;
+    document.getElementById("dashBorrowed")?.textContent = borrowed;
+  }
+}
+
+// ===== ACTIONS =====
 function borrowBook(id) {
   const name = prompt("Enter borrower name:");
   const borrowerId = prompt("Enter borrower ID number:");
@@ -99,11 +124,11 @@ function deleteBook(id) {
 }
 
 function addBook() {
-  const title = prompt("Title:");
-  const author = prompt("Author:");
-  const isbn = prompt("ISBN:");
-  const year = prompt("Year:");
-  if (!title || !author || !isbn || !year) return;
+  const title = prompt("Title:"); if (!title) return;
+  const author = prompt("Author:"); if (!author) return;
+  const isbn = prompt("ISBN:"); if (!isbn) return;
+  const year = prompt("Year:"); if (!year) return;
+
   books.push({
     id: Date.now(),
     title,
@@ -123,8 +148,10 @@ function resetLibrary() {
   loadBooks();
 }
 
+// ===== EVENT LISTENERS =====
 document.getElementById("addBookBtn")?.addEventListener("click", addBook);
 document.getElementById("searchInput")?.addEventListener("input", renderBooks);
 document.getElementById("filterSelect")?.addEventListener("change", renderBooks);
 
+// ===== INIT =====
 loadBooks();
