@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📖 Library Catalog</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="library" style="background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed; background-size: cover;">
+  <div class="overlay">
+    <div class="library-content">
+      <h2>📖 Library Catalog</h2>
+
+      <!-- Stats -->
+      <div class="stats">
+        <span id="totalCount">Total: 0</span>
+        <span id="availableCount">Available: 0</span>
+        <span id="borrowedCount">Borrowed: 0</span>
+      </div>
+
+      <!-- Controls -->
+      <section class="controls">
+        <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN..."/>
+        <select id="filterSelect">
+          <option value="all">All</option>
+          <option value="available">Available</option>
+          <option value="borrowed">Borrowed</option>
+        </select>
+        <button id="addBookBtn" class="btn small">+ Add Book</button>
+        <button onclick="resetLibrary()" class="btn small">🔄 Reset Library</button>
+      </section>
+
+      <!-- Book Catalog -->
+      <section id="bookTable" class="catalog"></section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
