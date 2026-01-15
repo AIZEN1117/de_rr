@@ -28,7 +28,6 @@ body.library {
 
 /* Content boxes */
 .welcome-content, .library-content {
-  background: rgba(255, 255, 255, 0.9); /* default semi-transparent white */
   padding: 2rem;
   border-radius: 8px;
   width: 80%;
@@ -50,6 +49,29 @@ body.library {
 .welcome-content a.btn {
   color: #fff;
   background-color: #0077cc; /* blue button */
+}
+
+/* Special styling for library page content */
+.library-content {
+  background: rgba(255, 255, 255, 0.85); /* light semi-transparent background */
+}
+.library-content h2 {
+  color: #2c3e50; /* dark navy for heading */
+}
+.library-content .stats {
+  color: #16a085; /* teal for stats text */
+}
+.library-content .controls input,
+.library-content .controls select {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+.library-content .controls button {
+  background-color: #2980b9; /* blue buttons */
+  color: #fff;
+}
+.library-content .controls button:hover {
+  background-color: #3498db;
 }
 
 /* Buttons */
@@ -88,6 +110,7 @@ body.library {
 }
 .book-card h3 {
   margin: 0 0 0.5rem;
+  color: #34495e; /* dark gray-blue for titles */
 }
 .book-card .meta {
   font-size: 0.9rem;
