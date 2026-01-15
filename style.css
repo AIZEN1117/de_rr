@@ -138,3 +138,48 @@ body.library {
 .book-card .actions button {
   margin-right: 0.5rem;
 }
+
+/* Dashboard page */
+body.dashboard {
+  background: url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.dashboard-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #fdf6e3;
+  border-radius: 6px;
+  padding: 1rem;
+  width: 25%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: #b58900;
+}
+
+.card p {
+  font-size: 1.5rem;
+  color: #cb4b16;
+  font-weight: bold;
+}
+
+.actions .btn {
+  margin: 0.5rem;
+}
